@@ -1,0 +1,84 @@
+/**
+ * 1200 Grid System
+ *
+ * @author Takashi Kitajima
+ * @url http://2inc.org
+ * @version 1.0.0
+ * @license GPL2
+ *
+ * minimum column size is 70px.
+ * The column side margin is 15px.
+ * Using 960 Grid System between 1199px and 960px.
+ */
+
+$bp_pc: 1240px;
+$bp_tablet: 980px;
+$bp_sp: 780px;
+
+.clearfix {
+	*zoom: 1;
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+.row {
+	@extend .clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	.row {
+		margin-left: -15px;
+		margin-right: -15px;
+		@media screen and ( max-width: $bp_pc ) {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+		@media screen and ( max-width: $bp_sp ) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	.col-12 {
+		@extend .clearfix;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1170px;
+		@media screen and ( max-width: $bp_pc ) {
+			width: 940px;
+		}
+		@media screen and ( max-width: $bp_tablet ) {
+			width: 760px;
+		}
+		@media screen and ( max-width: $bp_sp ) {
+			padding-left: 15px;
+			padding-right: 15px;
+			width: auto;
+		}
+	}
+
+	@for $i from 1 through 11 {
+		.col-#{$i} {
+			@extend .clearfix;
+			float: left;
+			margin-left: 15px;
+			margin-right: 15px;
+			width: #{$i * 70 + ( $i - 1 ) * 30}px;
+			@media screen and ( max-width: $bp_pc ) {
+				margin-left: 10px;
+				margin-right: 10px;
+				width: #{$i * 60 + ( $i - 1 ) * 20}px;
+			}
+			@media screen and ( max-width: $bp_tablet ) {
+				width: #{$i * 45 + ( $i - 1 ) * 20}px;
+			}
+			@media screen and ( max-width: $bp_sp ) {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				width: auto;
+			}
+		}
+	}
+}

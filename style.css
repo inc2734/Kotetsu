@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*
+Theme Name: Kotetsu
+Theme URI: https://github.com/inc2734/
+Description: Kotetsu is a simple theme for the blog. This theme is responsive, supports desktop( 1280 and 1024), tablets and smartphones. Features, using Sass and PHP Class in functions.php. So this theme is for developers!
+Author: inc2734
+Author URI: http://2inc.org
+Version: 1.0.0
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blue, white, right-sidebar, responsive-layout, editor-style, sticky-post, microformats, featured-images, custom-colors, custom-menu
+*/
+
+* {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+body {
+	color: #000;
+	font-size: 100%;
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+	/* 	font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; */
+	line-height: 1.4;
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, nav, section, article, figure, aside, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-size: 100%;
+	font-weight: normal;
+	margin: 40px 0 0;
+	padding: 0;
+}
+p, ul, ol, dl, table {
+	margin: 20px 0 0;
+	padding: 0;
+}
+li, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+dd {
+	margin-left: 1em;
+}
+
+/**
+ * img
+ */
+img {
+	border: none;
+	height: auto;
+	max-width: 100%;
+	vertical-align: text-bottom;
+}
+table img {
+	vertical-align: bottom;
+}
+
+/**
+ * ul
+ */
+ul li {
+	margin-left: 30px;
+	padding-left: 5px;
+}
+
+/**
+ * ol
+ */
+ol li {
+	margin-left: 30px;
+}
+
+/**
+ * table
+ */
+table {
+	font-size: 100%;
+	padding: 0;
+}
+th {
+	font-weight: normal;
+}
+th, td {
+	padding: 0;
+	text-align: left;
+}
+
+/**
+ * form
+ */
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+legend {
+	display: none;
+}
+textarea {
+	width: 99%;
+}
+
+/**
+ * blockquote
+ */
+blockquote {
+	border-left: #eee solid 5px;
+	margin: 0.5em 0 0.5em 20px;
+	padding: 0 0 0 20px;
+}
+
+/**
+ * .wp-caption
+ */
+.wp-caption {
+	border: none;
+	text-align: left;
+	background-color: transparent;
+	padding: 0;
+	margin: 20px 0 0;
+	border-radius: 0;
+	max-width: 100%;
+}
+.wp-caption-text {
+	margin-top: 5px;
+	font-size: 85%;
+	line-height: 1.4;
+}
+.gallery-caption {
+}
+
+/**
+ * Alignment
+ */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * .sticky ( Sticky Posts )
+ * Setting by layout.css
+ */
+.sticky {
+}
+
+/**
+ * .bypostauthor
+ */
+.bypostauthor {
+}
