@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kotetsu 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/kotetsu\n"
-"POT-Creation-Date: 2014-06-21 08:44:45+00:00\n"
+"POT-Creation-Date: 2014-06-21 11:45:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,11 +142,11 @@ msgid "Kotetsu"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/inc2734/"
+msgid "https://github.com/inc2734/kotetsu/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Kotetsu is a simple theme for the blog. This theme is responsive, supports desktop( 1280 and 1024), tablets and smartphones. Features, using Sass and PHP Class in functions.php. So this theme is for developers!"
+msgid "Kotetsu is a simple theme for the blog. This theme is responsive, supports desktop( 1280 and 1024 ), tablets and smartphones. Features, using Sass and PHP Class in functions.php. So this theme is for developers!"
 msgstr ""
 
 #. Author of the plugin/theme
