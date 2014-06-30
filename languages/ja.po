@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Kotetsu 1.0.0\n"
+"Project-Id-Version: Kotetsu 1.0.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/kotetsu\n"
-"POT-Creation-Date: 2014-06-21 11:45:56+00:00\n"
-"PO-Revision-Date: 2014-06-21 20:46+0900\n"
+"POT-Creation-Date: 2014-06-30 12:11:43+00:00\n"
+"PO-Revision-Date: 2014-06-30 21:13+0900\n"
 "Last-Translator: Takashi Kitajima <inc@2inc.org>\n"
 "Language-Team: Takashi Kitajima <inc@2inc.org>\n"
 "Language: ja_JP\n"
@@ -62,6 +62,10 @@ msgstr "トラックバック・ピンバック"
 msgid "No trackbacks."
 msgstr "トラックバックはありません。"
 
+#: comments.php:79
+msgid "TrackBack URL"
+msgstr "トラックバック URL"
+
 #: functions.php:62
 msgid "Global Navigation"
 msgstr "グローバルナビゲーション"
@@ -97,6 +101,22 @@ msgstr "公開日"
 #: functions.php:136
 msgid "Updated"
 msgstr "更新日"
+
+#: functions.php:172
+msgid "Monkey Wrench"
+msgstr "モンキーレンチ"
+
+#: functions.php:176
+msgid "WordPress"
+msgstr ""
+
+#: functions.php:178
+msgid "Kotetsu theme by %s"
+msgstr "Kotetsu theme by %s"
+
+#: functions.php:180
+msgid "Powered by %s"
+msgstr "Powered by %s"
 
 #: inc/kotetsu-customizer.php:17
 msgid "settings"

@@ -14,7 +14,7 @@
 
 			<div class="copyright">
 				<p>
-					Copyright &copy; <?php bloginfo( 'name' ); ?> All Rights Reserved.
+					<?php Kotetsu::the_copyright(); ?>
 				</p>
 			<!-- end .copyright --></div>
 		<!-- end .col-12 --></div>

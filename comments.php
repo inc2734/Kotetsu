@@ -76,7 +76,7 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 		<?php endif; ?>
 
 		<dl>
-			<dt>TrackBack URL</dt>
+			<dt><?php _e( 'TrackBack URL', Kotetsu::DOMAIN ); ?></dt>
 			<dd><input id="tburl" type="text" size="50" value="<?php trackback_url( true ); ?>" readonly="readonly" /></dd>
 		</dl>
 	<!-- end #trackback --></div>

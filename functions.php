@@ -162,6 +162,25 @@ class KotetsuBaseFunctions {
 	}
 
 	/**
+	 * the_copyright
+	 */
+	public static function the_copyright() {
+		$theme_url = 'http://2inc.org';
+		$wordpress_url = 'http://wordpress.org/';
+		$theme_link = sprintf( '<a href="%s" target="_blank">%s</a>',
+			esc_url( $theme_url ),
+			__( 'Monkey Wrench', Kotetsu::DOMAIN )
+		);
+		$wordpress_link = sprintf( '<a href="%s" target="_blank">%s</a>',
+			esc_url( $wordpress_url ),
+			__( 'WordPress', Kotetsu::DOMAIN )
+		);
+		printf( __( 'Kotetsu theme by %s', Kotetsu::DOMAIN ), $theme_link );
+		echo '&nbsp;';
+		printf( __( 'Powered by %s', Kotetsu::DOMAIN ), $wordpress_link );
+	}
+
+	/**
 	 * enqueue_styles
 	 */
 	public function enqueue_styles() {
