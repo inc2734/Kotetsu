@@ -7,7 +7,7 @@
 <main id="main" role="main" class="col-9">
 	<article class="hentry">
 		<?php Kotetsu::the_bread_crumb(); ?>
-		<h1 class="entry-title"><?php wp_title( '', true, '' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Woops! Page not found.', 'kotetsu' ); ?></h1>
 
 		<div class="entry-content">
 			<p>
