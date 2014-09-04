@@ -74,9 +74,6 @@ h4 {
 h6 {
 	@include fontsize( 12 );
 }
-a {
-	color: $main_color;
-}
 img {
 	vertical-align: bottom;
 }
@@ -178,7 +175,6 @@ body {
 	}
 }
 .global-nav {
-	background: $main_color;
 	text-align: center;
 	opacity: 0.95;
 	position: fixed;
@@ -198,15 +194,8 @@ body {
 			ul {
 				display: none;
 			}
-			&.current-menu-ancestor > a,
-			&.current-menu-item > a,
-			&.current_page_item > a,
-			a:hover {
-				background: #3370A1;
-			}
 			a {
 				@include fontsize( 12 );
-				background: $main_color;
 				color: #fff;
 				display: block;
 				font-weight: bold;
@@ -239,11 +228,7 @@ body {
 			margin-bottom: $margin*3;
 		}
 		a {
-			color: #000;
 			text-decoration: none;
-			&:hover, &:active {
-				color: $main_color;
-			}
 		}
 	}
 
@@ -390,6 +375,17 @@ body {
 				}
 			}
 		}
+		.comment-form {
+			label {
+				display: block;
+				.required {
+					color: #c7254e;
+				}
+			}
+			textarea {
+				width: 100%;
+			}
+		}
 		.pager {
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -411,7 +407,6 @@ body {
 				display: block;
 				height: 60px;
 				width: 60px;
-				background: $main_color;
 				border-radius: 100%;
 				color: #fff;
 				text-decoration: none;
@@ -583,7 +578,7 @@ body {
  */
 .pager {
 	@include fontsize( 12 );
-	margin: $margin*6 0 0;
+	margin: $margin*6 0 0 0;
 	p {
 		@extend .clearfix;
 		margin: 0;
@@ -592,10 +587,11 @@ body {
 			color: #111;
 			background-color: #fff;
 			margin: 0 2px 0 0;
-			padding: 2px 0 1px 0;
+			padding: 9px 0;
 			border: #ddd solid 1px;
 			float: left;
-			width: 23px;
+			width: 30px;
+			line-height: 1;
 			text-align: center;
 			text-decoration: none;
 			overflow: hidden;

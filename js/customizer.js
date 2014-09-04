@@ -29,7 +29,7 @@
 	// Link color
 	wp.customize( 'link_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'a:not( .global-nav a, #footer a, .hentry .entry-title a, .bread-crumb a )' ).css( 'color', to );
+			$( 'a:not( .global-nav a, #footer a, .hentry .entry-title a, .bread-crumb a, .entry-thumbnail a )' ).css( 'color', to );
 			$( '.entries .hentry .entry-thumbnail a' ).css( 'backgroundColor', to );
 		} );
 	} );
@@ -38,11 +38,6 @@
 	wp.customize( 'gnav_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.global-nav, .global-nav ul li a' ).css( 'backgroundColor', to );
-		} );
-	} );
-	wp.customize( 'gnav_rollover_color', function( value ) {
-		value.bind( function( to ) {
-			$( '.global-nav ul li.current-menu-ancestor > a, .global-nav ul li.current-menu-item > a, .global-nav ul li.current_page_item > a' ).css( 'backgroundColor', to );
 		} );
 	} );
 } )( jQuery );

@@ -1,13 +1,48 @@
 <?php
 /**
  * Kotetsu_Customizer
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: inc2734
  * Author URI: http://2inc.org
  */
 class Kotetsu_Customizer {
+
+	/**
+	 * Defaults theme mods
+	 */
+	protected $defaults = array();
+
+	/**
+	 * __construct
+	 */
+	public function __construct() {
+		$this->defaults = apply_filters( 'kotetsu_theme_mods_defaults', array(
+			'logo'                => get_template_directory_uri() . '/images/common/logo.png',
+			'gnav_color'          => '#377ab1',
+			'gnav_rollover_color' => '#3370a1',
+			'font_color'          => '#000',
+			'link_color'          => '#377ab1',
+		) );
+	}
+
+	/**
+	 * get_theme_mod
+	 * @param string $key
+	 * @return string
+	 */
+	protected function get_theme_mod( $key ) {
+		if ( isset( $this->defaults[$key] ) ) {
+			$theme_mod = get_theme_mod( $key );
+			if ( !$theme_mod ) {
+				$theme_mod = $this->defaults[$key];
+			}
+			return $theme_mod;
+		}
+	}
+
 	/**
 	 * customize_register
+	 * @param WP_Customizer $wp_customize
 	 */
 	public function customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -20,7 +55,7 @@ class Kotetsu_Customizer {
 
 		require_once get_template_directory() . '/inc/kotetsu-logo-control.php';
 		$wp_customize->add_setting( 'logo', array(
-			'default'   => get_template_directory_uri() . '/images/common/logo.png',
+			'default'   => $this->defaults['logo'],
 			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new Kotetsu_Logo_Control( $wp_customize, 'logo', array(
@@ -30,8 +65,8 @@ class Kotetsu_Customizer {
 		) ) );
 
 		$wp_customize->add_setting( 'gnav_color' , array(
-			'default'     => '#377ab1',
-			'transport'   => 'postMessage',
+			'default'   => $this->defaults['gnav_color'],
+			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_color', array(
 			'label'    => __( 'Global navigation color', 'kotetsu' ),
@@ -40,8 +75,7 @@ class Kotetsu_Customizer {
 		) ) );
 
 		$wp_customize->add_setting( 'gnav_rollover_color' , array(
-			'default'     => '#3370A1',
-			'transport'   => 'postMessage',
+			'default'   => $this->defaults['gnav_rollover_color'],
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_rollover_color', array(
 			'label'    => __( 'Global navigation rollover color', 'kotetsu' ),
@@ -50,8 +84,8 @@ class Kotetsu_Customizer {
 		) ) );
 
 		$wp_customize->add_setting( 'font_color' , array(
-			'default'     => '#000',
-			'transport'   => 'postMessage',
+			'default'   => $this->defaults['font_color'],
+			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_color', array(
 			'label'    => __( 'Font color', 'kotetsu' ),
@@ -60,8 +94,8 @@ class Kotetsu_Customizer {
 		) ) );
 
 		$wp_customize->add_setting( 'link_color' , array(
-			'default'     => '#377ab1',
-			'transport'   => 'postMessage',
+			'default'   => $this->defaults['link_color'],
+			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
 			'label'    => __( 'Link color', 'kotetsu' ),
@@ -76,36 +110,28 @@ class Kotetsu_Customizer {
 	public function customize_css() {
 		?>
 		<style>
-		<?php if ( get_theme_mod( 'font_color' ) ) : ?>
 		body,
 		.hentry .entry-title a {
-			color: <?php echo get_theme_mod( 'font_color' ); ?>;
+			color: <?php echo $this->get_theme_mod( 'font_color' ); ?>;
 		}
-		<?php endif; ?>
-		<?php if ( get_theme_mod( 'link_color' ) ) : ?>
 		a,
 		.hentry .entry-title a:hover,
 		.hentry .entry-title a:active {
-			color: <?php echo get_theme_mod( 'link_color' ); ?>;
+			color: <?php echo $this->get_theme_mod( 'link_color' ); ?>;
 		}
 		.entries .hentry .entry-thumbnail a {
-			background-color: <?php echo get_theme_mod( 'link_color' ); ?>;
+			background-color: <?php echo $this->get_theme_mod( 'link_color' ); ?>;
 		}
-		<?php endif; ?>
-		<?php if ( get_theme_mod( 'gnav_color' ) ) : ?>
 		.global-nav,
 		.global-nav ul li a {
-			background-color: <?php echo get_theme_mod( 'gnav_color' ); ?>;
+			background-color: <?php echo $this->get_theme_mod( 'gnav_color' ); ?>;
 		}
-		<?php endif; ?>
-		<?php if ( get_theme_mod( 'gnav_rollover_color' ) ) : ?>
 		.global-nav ul li.current-menu-ancestor > a,
 		.global-nav ul li.current-menu-item > a,
 		.global-nav ul li.current_page_item > a,
 		.global-nav ul li a:hover {
-			background-color: <?php echo get_theme_mod( 'gnav_rollover_color' ); ?>;
+			background-color: <?php echo $this->get_theme_mod( 'gnav_rollover_color' ); ?>;
 		}
-		<?php endif; ?>
 		</style>
 		<?php
 	}
@@ -114,6 +140,6 @@ class Kotetsu_Customizer {
 	 * customize_preview_js
 	 */
 	public function customize_preview_js() {
-		wp_enqueue_script( 'customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '16', true );
+		wp_enqueue_script( 'customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '18', true );
 	}
 }
