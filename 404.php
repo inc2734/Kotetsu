@@ -11,9 +11,9 @@
 
 		<div class="entry-content">
 			<p>
-				<?php _e( 'Woops! Page not found.', Kotetsu::DOMAIN ); ?><br />
-				<?php _e( 'The page you are looking for may be moved or deleted.', Kotetsu::DOMAIN ); ?><br />
-				<?php _e ( 'Please search this serch box.', Kotetsu::DOMAIN ); ?>
+				<?php _e( 'Woops! Page not found.', 'kotetsu' ); ?><br />
+				<?php _e( 'The page you are looking for may be moved or deleted.', 'kotetsu' ); ?><br />
+				<?php _e ( 'Please search this serch box.', 'kotetsu' ); ?>
 			</p>
 			<p>
 				<?php get_search_form(); ?>

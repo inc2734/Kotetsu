@@ -4,7 +4,7 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 	if ( !empty( $post->post_password ) ) {
 		if ( $_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password ) { ?>
 			<p class="nocomments">
-				<?php _e( 'This post is password protected. Enter the password to view any comments.', Kotetsu::DOMAIN ); ?>
+				<?php _e( 'This post is password protected. Enter the password to view any comments.', 'kotetsu' ); ?>
 			<p>
 			<?php
 			return;
@@ -16,7 +16,7 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 <div id="commentarea">
 	<?php if ( 'open' == $post->comment_status ) : ?>
 	<div id="comments">
-		<h2><?php _e( 'Comments on this post', Kotetsu::DOMAIN ); ?></h2>
+		<h2><?php _e( 'Comments on this post', 'kotetsu' ); ?></h2>
 		<?php if ( !empty( $comments_by_type['comment'] ) ) : ?>
 		<ol class="commentlist">
 			<?php
@@ -38,14 +38,14 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 		<?php endif; ?>
 
 		<?php else : ?>
-		<p class="nocomments"><?php _e( 'No comments.', Kotetsu::DOMAIN ); ?></p>
+		<p class="nocomments"><?php _e( 'No comments.', 'kotetsu' ); ?></p>
 		<?php endif; ?>
 
 		<div id="respond">
 			<?php if ( get_option( 'comment_registration' ) && !$user_ID ) : ?>
 			<p>
 				<?php
-				printf( __( 'It is necessary to <a href="%/wp-login.php?redirect_to=%s">login</a> to write comment.', Kotetsu::DOMAIN ),
+				printf( __( 'It is necessary to <a href="%/wp-login.php?redirect_to=%s">login</a> to write comment.', 'kotetsu' ),
 					home_url(),get_permalink()
 				);
 				?>
@@ -61,7 +61,7 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 
 	<?php if ( 'open' == $post->ping_status ) : ?>
 	<div id="trackback">
-		<h2><?php _e( 'Trackbacks and Pinbacks on this post', Kotetsu::DOMAIN ); ?></h2>
+		<h2><?php _e( 'Trackbacks and Pinbacks on this post', 'kotetsu' ); ?></h2>
 		<?php if ( ! empty($comments_by_type['pings']) ) : ?>
 		<ol class="trackbacklist">
 			<?php
@@ -72,11 +72,11 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 			?>
 		</ol>
 		<?php else : ?>
-		<p class="nocomments"><?php _e( 'No trackbacks.', Kotetsu::DOMAIN ); ?></p>
+		<p class="nocomments"><?php _e( 'No trackbacks.', 'kotetsu' ); ?></p>
 		<?php endif; ?>
 
 		<dl>
-			<dt><?php _e( 'TrackBack URL', Kotetsu::DOMAIN ); ?></dt>
+			<dt><?php _e( 'TrackBack URL', 'kotetsu' ); ?></dt>
 			<dd><input id="tburl" type="text" size="50" value="<?php trackback_url( true ); ?>" readonly="readonly" /></dd>
 		</dl>
 	<!-- end #trackback --></div>

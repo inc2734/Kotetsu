@@ -14,7 +14,7 @@ class Kotetsu_Customizer {
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 		$wp_customize->add_section( 'kotetsu_design', array(
-			'title'    => __( 'settings', Kotetsu::DOMAIN ),
+			'title'    => __( 'settings', 'kotetsu' ),
 			'priority' => 100,
 		) );
 
@@ -24,7 +24,7 @@ class Kotetsu_Customizer {
 			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new Kotetsu_Logo_Control( $wp_customize, 'logo', array(
-			'label'    => __( 'Logo', Kotetsu::DOMAIN ),
+			'label'    => __( 'Logo', 'kotetsu' ),
 			'section'  => 'kotetsu_design',
 			'settings' => 'logo',
 		) ) );
@@ -34,9 +34,9 @@ class Kotetsu_Customizer {
 			'transport'   => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_color', array(
-			'label'      => __( 'Global navigation color', Kotetsu::DOMAIN ),
-			'section'    => 'colors',
-			'settings'   => 'gnav_color',
+			'label'    => __( 'Global navigation color', 'kotetsu' ),
+			'section'  => 'colors',
+			'settings' => 'gnav_color',
 		) ) );
 
 		$wp_customize->add_setting( 'gnav_rollover_color' , array(
@@ -44,9 +44,9 @@ class Kotetsu_Customizer {
 			'transport'   => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_rollover_color', array(
-			'label'      => __( 'Global navigation rollover color', Kotetsu::DOMAIN ),
-			'section'    => 'colors',
-			'settings'   => 'gnav_rollover_color',
+			'label'    => __( 'Global navigation rollover color', 'kotetsu' ),
+			'section'  => 'colors',
+			'settings' => 'gnav_rollover_color',
 		) ) );
 
 		$wp_customize->add_setting( 'font_color' , array(
@@ -54,9 +54,9 @@ class Kotetsu_Customizer {
 			'transport'   => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_color', array(
-			'label'      => __( 'Font color', Kotetsu::DOMAIN ),
-			'section'    => 'colors',
-			'settings'   => 'font_color',
+			'label'    => __( 'Font color', 'kotetsu' ),
+			'section'  => 'colors',
+			'settings' => 'font_color',
 		) ) );
 
 		$wp_customize->add_setting( 'link_color' , array(
@@ -64,9 +64,9 @@ class Kotetsu_Customizer {
 			'transport'   => 'postMessage',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-			'label'      => __( 'Link color', Kotetsu::DOMAIN ),
-			'section'    => 'colors',
-			'settings'   => 'link_color',
+			'label'    => __( 'Link color', 'kotetsu' ),
+			'section'  => 'colors',
+			'settings' => 'link_color',
 		) ) );
 	}
 

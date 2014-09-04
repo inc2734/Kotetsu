@@ -22,8 +22,6 @@ add_action( 'after_setup_theme', 'kotetsu_parent_theme_setup', 99999 );
  */
 class KotetsuBaseFunctions {
 
-	const DOMAIN = 'kotetsu';
-
 	/**
 	 * __construct
 	 */
@@ -59,8 +57,8 @@ class KotetsuBaseFunctions {
 	protected function _menu() {
 		add_theme_support( 'menu' );
 		register_nav_menus( array(
-			'global-nav' => __( 'Global Navigation', Kotetsu::DOMAIN ),
-			'footer-nav' => __( 'Footer Navigation', Kotetsu::DOMAIN ),
+			'global-nav' => __( 'Global Navigation', 'kotetsu' ),
+			'footer-nav' => __( 'Footer Navigation', 'kotetsu' ),
 		) );
 	}
 
@@ -79,9 +77,9 @@ class KotetsuBaseFunctions {
 	 */
 	protected function _register_sidebar() {
 		register_sidebar( array(
-			'name'          => __( 'blog sidebar', Kotetsu::DOMAIN ),
+			'name'          => __( 'blog sidebar', 'kotetsu' ),
 			'id'            => 'blog-sidebar',
-			'description'   => __( 'right column', Kotetsu::DOMAIN ),
+			'description'   => __( 'right column', 'kotetsu' ),
 			'before_widget' => '<div id="%1$s" class="widget-container %2$s"><dl>',
 			'after_widget'  => '</dd></dl></div>',
 			'before_title'  => '<dt class="widget-title">',
@@ -107,10 +105,10 @@ class KotetsuBaseFunctions {
 				</dt>
 				<dd class="comment-body">
 					<?php if ( $comment->comment_approved == '0' ) : ?>
-						<?php _e( 'Your comment is awaiting moderation.', Kotetsu::DOMAIN ) ?></em><br />
+						<?php _e( 'Your comment is awaiting moderation.', 'kotetsu' ) ?></em><br />
 					  <?php endif; ?>
 					<div class="comment-meta commentmetadata">
-						<?php printf( __( '%1$s at %2$s', Kotetsu::DOMAIN ), get_comment_date(), get_comment_time() ) ?><?php edit_comment_link( 'edit', '  ', '' ); ?>
+						<?php printf( __( '%1$s at %2$s', 'kotetsu' ), get_comment_date(), get_comment_time() ) ?><?php edit_comment_link( 'edit', '  ', '' ); ?>
 					<!-- end .comment-meta --></div>
 					<?php comment_text() ?>
 					<div class="reply">
@@ -128,12 +126,12 @@ class KotetsuBaseFunctions {
 		?>
 		<div class="entry-meta">
 			<ul>
-				<li class="vCard author"><?php _e( 'Author', Kotetsu::DOMAIN ); ?>: <span class="fn"><?php the_author(); ?></span></li>
+				<li class="vCard author"><?php _e( 'Author', 'kotetsu' ); ?>: <span class="fn"><?php the_author(); ?></span></li>
 				<li class="published">
-					<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php _e( 'Published', Kotetsu::DOMAIN ); ?>: <?php echo esc_html( get_the_date() ); ?></time>
+					<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php _e( 'Published', 'kotetsu' ); ?>: <?php echo esc_html( get_the_date() ); ?></time>
 				</li>
 				<li class="updated hidden">
-					<time datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php _e( 'Updated', Kotetsu::DOMAIN ); ?>: <?php echo esc_html( get_the_modified_date() ); ?></time>
+					<time datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>"><?php _e( 'Updated', 'kotetsu' ); ?>: <?php echo esc_html( get_the_modified_date() ); ?></time>
 				</li>
 				<?php
 				if ( $categories = get_the_category() ) :
@@ -169,15 +167,15 @@ class KotetsuBaseFunctions {
 		$wordpress_url = 'http://wordpress.org/';
 		$theme_link = sprintf( '<a href="%s" target="_blank">%s</a>',
 			esc_url( $theme_url ),
-			__( 'Monkey Wrench', Kotetsu::DOMAIN )
+			__( 'Monkey Wrench', 'kotetsu' )
 		);
 		$wordpress_link = sprintf( '<a href="%s" target="_blank">%s</a>',
 			esc_url( $wordpress_url ),
-			__( 'WordPress', Kotetsu::DOMAIN )
+			__( 'WordPress', 'kotetsu' )
 		);
-		printf( __( 'Kotetsu theme by %s', Kotetsu::DOMAIN ), $theme_link );
+		printf( __( 'Kotetsu theme by %s', 'kotetsu' ), $theme_link );
 		echo '&nbsp;';
-		printf( __( 'Powered by %s', Kotetsu::DOMAIN ), $wordpress_link );
+		printf( __( 'Powered by %s', 'kotetsu' ), $wordpress_link );
 	}
 
 	/**

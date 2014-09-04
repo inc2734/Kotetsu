@@ -36,10 +36,10 @@ class mw_bread_crumb {
 		$params = shortcode_atts( $defaults, $params );
 
 		if ( is_404() ) {
-			$this->set( __( 'Page not found.', Kotetsu::DOMAIN ) );
+			$this->set( __( 'Page not found.', 'kotetsu' ) );
 		}
 		elseif ( is_search() ) {
-			$this->set( sprintf( __( 'Serch results for "%s"', Kotetsu::DOMAIN ), get_search_query() ) );
+			$this->set( sprintf( __( 'Serch results for "%s"', 'kotetsu' ), get_search_query() ) );
 		}
 		elseif ( is_tax() ) {
 			$taxonomy = get_query_var( 'taxonomy' );
@@ -139,9 +139,9 @@ class mw_bread_crumb {
 				$month = get_query_var( 'monthnum' );
 				$day = get_query_var( 'day' );
 			}
-			$this->set( sprintf( _x( '%s', 'year', Kotetsu::DOMAIN ), $year ), get_year_link( $year ) );
-			$this->set( sprintf( _x( '%s', 'month', Kotetsu::DOMAIN ), $month ), get_month_link( $year, $month ) );
-			$this->set( sprintf( _x( '%s', 'day', Kotetsu::DOMAIN ), $day ) );
+			$this->set( sprintf( _x( '%s', 'year', 'kotetsu' ), $year ), get_year_link( $year ) );
+			$this->set( sprintf( _x( '%s', 'month', 'kotetsu' ), $month ), get_month_link( $year, $month ) );
+			$this->set( sprintf( _x( '%s', 'day', 'kotetsu' ), $day ) );
 		}
 		elseif ( is_month() ) {
 			$year = get_query_var( 'year' );
@@ -152,8 +152,8 @@ class mw_bread_crumb {
 			} else {
 				$month = get_query_var( 'monthnum' );
 			}
-			$this->set( sprintf( _x( '%s', 'year', Kotetsu::DOMAIN ), $year ), get_year_link( $year ) );
-			$this->set( sprintf( _x( '%s', 'month', Kotetsu::DOMAIN ), $month ) );
+			$this->set( sprintf( _x( '%s', 'year', 'kotetsu' ), $year ), get_year_link( $year ) );
+			$this->set( sprintf( _x( '%s', 'month', 'kotetsu' ), $month ) );
 		}
 		elseif ( is_year() ) {
 			$year = get_query_var( 'year' );
@@ -161,7 +161,7 @@ class mw_bread_crumb {
 				$m = get_query_var( 'm' );
 				$year = $m;
 			}
-			$this->set( sprintf( _x( '%s', 'year', Kotetsu::DOMAIN ), $year ) );
+			$this->set( sprintf( _x( '%s', 'year', 'kotetsu' ), $year ) );
 		}
 		else {
 			if ( !is_front_page() ) {
