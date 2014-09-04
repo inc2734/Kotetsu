@@ -1,27 +1,13 @@
 /**
- * jquery.css
- * Version: 1.0.0
+ * jquery.responsive-nav.css
+ * Version: 1.0.5
  * Author: Takashi Kitajima
  * Autho URI: http://2inc.org
  * created : February 20, 2014
- * modified:
+ * modified: July 31, 2014
  * package: jquery
- * License: GPL2
- *
- * Copyright 2014 Takashi Kitajima (email : inc@2inc.org)
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ * License: GPLv2
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
@@ -89,7 +75,7 @@
 }
 .responsive-nav ul li ul li a {
 	font-weight: normal;
-	padding: 10px 15px !important;
+	padding: 10px 15px;
 }
 .responsive-nav ul li ul li ul {
 	position: absolute;
@@ -111,6 +97,7 @@
 	margin: 0 !important;
 	padding: 0 !important;
 	width: 80%;
+	max-width: 300px;
 	position: absolute !important;
 	overflow: auto !important;
 	top: 0 !important;
@@ -126,6 +113,7 @@
 }
 .off-canvas-nav,
 .off-canvas-nav ul li {
+	background-color: #000 !important;
 	float: none !important;
 	border-top: 1px solid #333;
 }
@@ -133,7 +121,7 @@
 	display: block !important;
 }
 .off-canvas-nav ul li ul {
-	border-top: none;
+	border-top: none !important;
 	border-left: 1px solid #333;
 	display: block !important;
 	visibility: visible !important;
@@ -143,7 +131,7 @@
 	width: auto !important;
 }
 .off-canvas-nav ul li a {
-	color: #ccc;
+	color: #ccc !important;
 	background-color: #000 !important;
 	border: none !important;
 	display: block !important;

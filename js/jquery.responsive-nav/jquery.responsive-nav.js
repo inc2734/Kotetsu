@@ -1,27 +1,14 @@
 /**
  * jquery.responsive-nav
  * Description: レスポンシブなナビゲーションを実装。プルダウンナビ <=> オフキャンバスナビ
- * Version: 1.0.2
+ * Version: 1.0.7
  * Author: Takashi Kitajima
  * Autho URI: http://2inc.org
  * created : February 20, 2014
- * modified: June 21, 2014
- * License: GPL2
- *
- * Copyright 2014 Takashi Kitajima (email : inc@2inc.org)
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ * modified: August 12, 2014
+ * package: jquery
+ * License: GPLv2
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 ;( function( $ ) {
 	$.fn.responsive_nav = function( config ) {
@@ -36,6 +23,8 @@
 			if ( $( '#responsive-btn' ).css( 'display' ) !== 'none' ) {
 				wrap_all();
 				set_off_canvas_nav();
+			} else {
+				_global_nav.show();
 			}
 
 			var menu = $( this ).find( 'ul:first-child' );
@@ -124,7 +113,6 @@
 				container.children().unwrap();
 				wrapper.children().unwrap();
 				container = '';
-				console.log( _global_nav.length );
 				_global_nav.show();
 				global_nav.remove();
 			}
@@ -144,7 +132,7 @@
 
 		function set_off_canvas_nav() {
 			global_nav.addClass( 'off-canvas-nav' );
-			global_nav.css( 'display', 'none' );
+			global_nav.css( 'left', - get_slide_width() );
 		}
 
 		function unset_off_canvas_nav() {
