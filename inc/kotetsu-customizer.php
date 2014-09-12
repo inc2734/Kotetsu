@@ -56,7 +56,6 @@ class Kotetsu_Customizer {
 		require_once get_template_directory() . '/inc/kotetsu-logo-control.php';
 		$wp_customize->add_setting( 'logo', array(
 			'default'   => $this->defaults['logo'],
-			'transport' => 'postMessage',
 		) );
 		$wp_customize->add_control( new Kotetsu_Logo_Control( $wp_customize, 'logo', array(
 			'label'    => __( 'Logo', 'kotetsu' ),

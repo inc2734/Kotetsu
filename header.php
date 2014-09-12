@@ -28,7 +28,15 @@
 		<div class="col-12">
 			<div class="logo">
 				<h1>
-					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+					<?php
+					$header_logo = get_theme_mod( 'logo' );
+					if ( !$header_logo ) {
+						$header_logo = get_template_directory_uri() . '/images/common/logo.png';
+					}
+					?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+					</a>
 				</h1>
 			<!-- end .logo --></div>
 		<!-- end .col-12 --></div>

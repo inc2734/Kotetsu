@@ -11,13 +11,6 @@
 		} );
 	} );
 
-	// Logo
-	wp.customize( 'logo', function( value ) {
-		value.bind( function( to ) {
-			$( '.logo img' ).attr( 'src', to );
-		} );
-	} );
-
 	// Font color
 	wp.customize( 'font_color', function( value ) {
 		value.bind( function( to ) {
