@@ -75,10 +75,12 @@ if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 		<p class="nocomments"><?php _e( 'No trackbacks.', 'kotetsu' ); ?></p>
 		<?php endif; ?>
 
-		<dl>
-			<dt><?php _e( 'TrackBack URL', 'kotetsu' ); ?></dt>
-			<dd><input id="tburl" type="text" size="50" value="<?php trackback_url( true ); ?>" readonly="readonly" /></dd>
-		</dl>
+		<div class="trackback-url">
+			<dl>
+				<dt><?php _e( 'TrackBack URL', 'kotetsu' ); ?></dt>
+				<dd><input id="tburl" type="text" size="50" value="<?php trackback_url( true ); ?>" readonly="readonly" /></dd>
+			</dl>
+		<!-- end .trackback-url --></div>
 	<!-- end #trackback --></div>
 	<?php endif; ?>
 <!-- end #commentarea --></div>

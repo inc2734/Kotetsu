@@ -339,6 +339,7 @@ body {
 		#respond {
 			margin-bottom: $margin;
 		}
+		
 		#comments, #trackback {
 			margin-top: $margin * 4;
 			> h2 {
@@ -346,6 +347,7 @@ body {
 				margin-top: 0;
 			}
 		}
+
 		.commentlist {
 			list-style: none;
 			margin: 0;
@@ -411,6 +413,28 @@ body {
 				}
 			}
 		}
+
+		.trackbacklist {
+			.pingback {
+				.comment-body {
+					@include fontsize( 12 );
+					margin-left: 0;
+					color: #999;
+					p, ul, ol, dl, table {
+						margin-top: $margin;
+					}
+				}
+			}
+		}
+
+		.trackback-url {
+			dl {
+				dd {
+					margin-left: 0;
+				}
+			}
+		}
+
 		.comment-form {
 			label {
 				display: block;
@@ -422,6 +446,7 @@ body {
 				width: 100%;
 			}
 		}
+
 		.pager {
 			margin-top: 20px;
 			margin-bottom: 20px;

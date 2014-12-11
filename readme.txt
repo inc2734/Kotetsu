@@ -71,6 +71,7 @@ add_filter( 'foo', 'your_filter' );
 * Fixed a bug that global navigation for pc is displayed at smartphone.
 * Offcanvas navigation button is changed to text.
 * If logo image is not setted, displaying blog name.
+* Trackback area styling.
 
 = 1.0.4 =
 * Fixed a bug that are not changed even if uploaded a logo in customization page.
