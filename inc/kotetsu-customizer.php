@@ -66,6 +66,7 @@ class Kotetsu_Customizer {
 		$wp_customize->add_setting( 'gnav_color' , array(
 			'default'   => $this->defaults['gnav_color'],
 			'transport' => 'postMessage',
+			'sanitize_callback' => array( $this, 'sanitize_colorcode' ),
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_color', array(
 			'label'    => __( 'Global navigation color', 'kotetsu' ),
@@ -75,6 +76,7 @@ class Kotetsu_Customizer {
 
 		$wp_customize->add_setting( 'gnav_rollover_color' , array(
 			'default'   => $this->defaults['gnav_rollover_color'],
+			'sanitize_callback' => array( $this, 'sanitize_colorcode' ),
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gnav_rollover_color', array(
 			'label'    => __( 'Global navigation rollover color', 'kotetsu' ),
@@ -85,6 +87,7 @@ class Kotetsu_Customizer {
 		$wp_customize->add_setting( 'font_color' , array(
 			'default'   => $this->defaults['font_color'],
 			'transport' => 'postMessage',
+			'sanitize_callback' => array( $this, 'sanitize_colorcode' ),
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'font_color', array(
 			'label'    => __( 'Font color', 'kotetsu' ),
@@ -95,6 +98,7 @@ class Kotetsu_Customizer {
 		$wp_customize->add_setting( 'link_color' , array(
 			'default'   => $this->defaults['link_color'],
 			'transport' => 'postMessage',
+			'sanitize_callback' => array( $this, 'sanitize_colorcode' ),
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
 			'label'    => __( 'Link color', 'kotetsu' ),
@@ -140,5 +144,17 @@ class Kotetsu_Customizer {
 	 */
 	public function customize_preview_js() {
 		wp_enqueue_script( 'customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '18', true );
+	}
+
+	/**
+	 * sanitize_colorcode
+	 * @param string $value
+	 * @return bool
+	 */
+	public function sanitize_colorcode( $value ) {
+		if ( preg_match( '/^#([\da-fA-F]{6}|[\da-fA-F]{3})$/', $value ) ) {
+			return true;
+		}
+		return false;
 	}
 }

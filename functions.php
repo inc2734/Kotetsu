@@ -33,12 +33,13 @@ class KotetsuBaseFunctions {
 		add_filter( 'tiny_mce_before_init', array( $this, 'add_body_class_mce' ) );
 		add_theme_support( 'automatic-feed-links' );
 		$this->_menu();
-		$this->_register_sidebar();
 		$this->_customizer();
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+		add_action( 'widgets_init', array( $this, '_register_sidebar' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_filter( 'wp_title', array( $this, 'wp_title' ), 10, 3 );
 	}
 
 	/**
@@ -75,7 +76,7 @@ class KotetsuBaseFunctions {
 	/**
 	 * _register_sidebar
 	 */
-	protected function _register_sidebar() {
+	public function _register_sidebar() {
 		register_sidebar( array(
 			'name'          => __( 'blog sidebar', 'kotetsu' ),
 			'id'            => 'blog-sidebar',
@@ -207,6 +208,16 @@ class KotetsuBaseFunctions {
 		wp_enqueue_script( 'jquery.scrollButton', $url . '/js/jquery.scrollButton/jquery.scrollButton.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'responsive-nav', $url . '/js/jquery.responsive-nav/jquery.responsive-nav.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'base_main', $url . '/js/main.js', array( 'jquery' ), false, true );
+	}
+
+	/**
+	 * wp_title
+	 */
+	public function wp_title( $title, $sep, $seplocation ) {
+		if ( $sep = '|' && $seplocation === 'right' ) {
+			$title .= get_bloginfo( 'name' );
+		}
+		return $title;
 	}
 
 	/**
