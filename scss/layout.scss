@@ -78,10 +78,10 @@ img {
 	vertical-align: bottom;
 }
 h3, h4, h5, h6 {
-	margin-top: $margin*2;
+	margin-top: $margin * 2;
 }
 p, ul, ol, dl, table, blockquote, .wp-caption {
-	margin-top: $margin*2;
+	margin-top: $margin * 2;
 }
 code {
 	background: #f9f2f4;
@@ -225,7 +225,7 @@ body {
 		line-height: 1.4;
 		margin: 0;
 		.page & {
-			margin-bottom: $margin*3;
+			margin-bottom: $margin * 3;
 		}
 		a {
 			text-decoration: none;
@@ -239,7 +239,7 @@ body {
 		@include fontsize( 12 );
 		border: #ddd solid 1px;
 		border-radius: 5px;
-		margin: $margin 0 $margin*3;
+		margin: $margin 0 $margin * 3;
 		padding: 5px 10px;
 		ul {
 			@extend .noFormatList;
@@ -260,7 +260,7 @@ body {
 		}
 
 		.error404 & {
-			margin-top: $margin*4;
+			margin-top: $margin * 4;
 		}
 
 		table {
@@ -303,6 +303,9 @@ body {
 	 */
 	#commentarea {
 		margin-top: $margin;
+		#respond {
+			margin-bottom: $margin;
+		}
 		#comments, #trackback {
 			margin-top: $margin * 4;
 			> h2 {
@@ -363,7 +366,7 @@ body {
 						}
 					}
 				}
-				&.bypostauthor dl dt {
+				&.bypostauthor .comment-item .comment-header {
 					float: right;
 					margin: 0 0 0 20px;
 				}
@@ -395,7 +398,7 @@ body {
 
 .entries {
 	.hentry {
-		padding: $margin*6 0 0;
+		padding: $margin * 6 0 0;
 		&:first-child {
 			padding-top: 0;
 		}
@@ -458,8 +461,8 @@ body {
 #sub {
 	.widget-container {
 		border-top: #ddd solid 1px;
-		margin: $margin*2 0 0;
-		padding: $margin*2 0 0;
+		margin: $margin * 2 0 0;
+		padding: $margin * 2 0 0;
 		&:first-child {
 			margin: 0;
 		}
@@ -578,7 +581,7 @@ body {
  */
 .pager {
 	@include fontsize( 12 );
-	margin: $margin*6 0 0 0;
+	margin: $margin * 6 0 0 0;
 	p {
 		@extend .clearfix;
 		margin: 0;

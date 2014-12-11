@@ -5,7 +5,7 @@ Theme URI: https://github.com/inc2734/kotetsu/
 Description: Kotetsu is a simple theme for the blog. This theme is responsive, supports desktop( 1280 and 1024 ), tablets and smartphones. Features, using Sass and PHP Class in functions.php. So this theme is for developers!
 Author: inc2734
 Author URI: http://2inc.org
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blue, white, right-sidebar, responsive-layout, editor-style, sticky-post, microformats, featured-images, custom-colors, custom-menu
@@ -66,8 +66,11 @@ add_filter( 'foo', 'your_filter' );
 
 == Changelog ==
 
+= 1.0.5 =
+* Fixed a postbyauthor css bug.
+
 = 1.0.4 =
-* Fixed a bug that are not changed even if  uploaded a logo in customization page.
+* Fixed a bug that are not changed even if uploaded a logo in customization page.
 
 = 1.0.3 =
 * Changed the text domain.
