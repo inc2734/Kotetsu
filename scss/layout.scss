@@ -170,9 +170,13 @@ body {
 			padding-top: 90px;
 		}
 		h1 {
+			@include fontsize( 20 );
 			font-weight: bold;
 			margin: 0;
 			padding: 0;
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 

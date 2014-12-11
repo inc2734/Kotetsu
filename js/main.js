@@ -14,5 +14,5 @@ jQuery( function( $ ) {
 	 * scrollButton
 	 */
 	$( 'body' ).scrollButton();
-
+	
 } );

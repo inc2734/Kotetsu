@@ -31,12 +31,18 @@
 					<h1>
 						<?php
 						$header_logo = get_theme_mod( 'logo' );
-						if ( !$header_logo ) {
-							$header_logo = get_template_directory_uri() . '/images/common/logo.png';
+						if ( $header_logo ) {
+							$header_logo = sprintf(
+								'<img src="%s" alt="%s" />',
+								esc_url( $header_logo ),
+								get_bloginfo( 'name' )
+							);
+						} else {
+							$header_logo = get_bloginfo( 'name' );
 						}
 						?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+							<?php echo $header_logo; ?>
 						</a>
 					</h1>
 				<!-- end .logo --></div>
