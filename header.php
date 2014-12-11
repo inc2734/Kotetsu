@@ -14,31 +14,33 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="container">
-	<div class="global-nav row">
-		<?php
-		wp_nav_menu( array(
-			'container_class' => 'col-12',
-			'theme_location' => 'global-nav',
-			'depth' => 0
-		) );
-		?>
-	<!-- end .global-nav --></div>
-	<header id="header" class="row">
-		<div id="responsive-btn"></div>
-		<div class="col-12">
-			<div class="logo">
-				<h1>
-					<?php
-					$header_logo = get_theme_mod( 'logo' );
-					if ( !$header_logo ) {
-						$header_logo = get_template_directory_uri() . '/images/common/logo.png';
-					}
-					?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
-					</a>
-				</h1>
-			<!-- end .logo --></div>
-		<!-- end .col-12 --></div>
+	<header id="header">
+		<div class="global-nav row">
+			<?php
+			wp_nav_menu( array(
+				'menu_class'     => 'menu col-12',
+				'theme_location' => 'global-nav',
+				'depth' => 0
+			) );
+			?>
+		<!-- end .global-nav --></div>
+		<div class="row">
+			<div id="responsive-btn"></div>
+			<div class="col-12">
+				<div class="logo">
+					<h1>
+						<?php
+						$header_logo = get_theme_mod( 'logo' );
+						if ( !$header_logo ) {
+							$header_logo = get_template_directory_uri() . '/images/common/logo.png';
+						}
+						?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						</a>
+					</h1>
+				<!-- end .logo --></div>
+			<!-- end .col-12 --></div>
+		<!-- end .row --></div>
 	<!-- end #header --></header>
 	<div id="contents">
