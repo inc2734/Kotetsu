@@ -27,7 +27,11 @@ Tags: blue, white, right-sidebar, responsive-layout, editor-style, sticky-post, 
 
 HTML5 Shiv
 License: MIT/GPL2 License
-Source:  https://github.com/aFarkas/html5shiv
+Source : https://github.com/aFarkas/html5shiv
+
+Genericons
+License: GPL
+Source : http://genericons.com/
 
 == Theme features ==
 
