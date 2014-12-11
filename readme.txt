@@ -68,6 +68,7 @@ add_filter( 'foo', 'your_filter' );
 
 = 1.0.5 =
 * Fixed a postbyauthor css bug.
+* Fixed a bug that global navigation for pc is displayed at smartphone.
 
 = 1.0.4 =
 * Fixed a bug that are not changed even if uploaded a logo in customization page.
