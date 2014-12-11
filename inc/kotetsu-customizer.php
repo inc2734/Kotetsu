@@ -56,6 +56,7 @@ class Kotetsu_Customizer {
 		require_once get_template_directory() . '/inc/kotetsu-logo-control.php';
 		$wp_customize->add_setting( 'logo', array(
 			'default'   => $this->defaults['logo'],
+			'sanitize_callback' => array( $this, 'sanitize_image_url' ),
 		) );
 		$wp_customize->add_control( new Kotetsu_Logo_Control( $wp_customize, 'logo', array(
 			'label'    => __( 'Logo', 'kotetsu' ),
@@ -147,13 +148,25 @@ class Kotetsu_Customizer {
 	}
 
 	/**
+	 * sanitize_image_url
+	 * @param string $value
+	 * @return string $value
+	 */
+	public function sanitize_image_url( $value ) {
+		if ( preg_match( '/^' . preg_quote( home_url(), '/' ) . '\/.+?\.(gif|jpg|jpeg|bmp|png)$/', $value ) ) {
+			return $value;
+		}
+		return false;
+	}
+
+	/**
 	 * sanitize_colorcode
 	 * @param string $value
-	 * @return bool
+	 * @return string $value
 	 */
 	public function sanitize_colorcode( $value ) {
 		if ( preg_match( '/^#([\da-fA-F]{6}|[\da-fA-F]{3})$/', $value ) ) {
-			return true;
+			return $value;
 		}
 		return false;
 	}
