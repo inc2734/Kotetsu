@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', 'kotetsu_parent_theme_setup', 99999 );
 
 /**
  * KotetsuBaseFunctions
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: inc2734
  * Author URI: http://2inc.org
  */
@@ -39,7 +39,7 @@ class KotetsuBaseFunctions {
 		add_action( 'widgets_init', array( $this, '_register_sidebar' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_filter( 'wp_title', array( $this, 'wp_title' ), 10, 3 );
+		add_filter( 'wp_title', array( $this, 'wp_title' ), 11, 3 );
 	}
 
 	/**
@@ -214,7 +214,7 @@ class KotetsuBaseFunctions {
 	 * wp_title
 	 */
 	public function wp_title( $title, $sep, $seplocation ) {
-		if ( $sep = '|' && $seplocation === 'right' ) {
+		if ( $sep === '|' && $seplocation === 'right' ) {
 			$title .= get_bloginfo( 'name' );
 		}
 		return $title;
